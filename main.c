@@ -9,6 +9,10 @@ int main(){
     node e2=merge('+', e1, e3);
     node e5=create_leaf(5);
     node e6=merge('*',e3,e5);
+    bool valid=eval(e);
+    printf("Is valid expression ? %s\n", valid? "True" : "False");
     affiche(e);
+    float f=eval(e);
+    printf("%f\n",f);
     return 0;
 }

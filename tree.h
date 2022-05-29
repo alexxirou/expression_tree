@@ -21,4 +21,6 @@ bool is_internal(node e);
 char internal_root(node e);
 float leaf_root(node e); 
 void affiche(node e);
+float eval(node e);
+bool est_valide(node e);
 #endif

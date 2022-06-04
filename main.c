@@ -1,18 +1,17 @@
 #include "tree.h"
 
 int main(){
-    node e=create_leaf(2);
-    node e1=exprnew();
-    e->node_right=e1;
-    e1->label.node_name='-';
-    node e3=create_leaf(1);
-    node e2=merge('+', e1, e3);
-    node e5=create_leaf(5);
-    node e6=merge('*',e3,e5);
-    bool valid=eval(e);
-    printf("Is valid expression ? %s\n", valid? "True" : "False");
+    node a=create_leaf(2);
+    node b=merge('-', a, NULL);
+
+    node d=create_leaf(1);
+    node c=merge('+', b, d);
+    node f=create_leaf(5);
+    node e=merge('*',c,f);
+    //bool valid=eval(e);
+    //printf("Is valid expression ? %s\n", valid? "True" : "False");
     affiche(e);
-    float f=eval(e);
-    printf("%f\n",f);
+    //float f=eval(e);
+    //printf("%f\n",f);
     return 0;
 }

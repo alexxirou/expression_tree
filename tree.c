@@ -82,5 +82,58 @@ void affiche(node e){
         i--;
         next=e;
     }    
+    printf("\n");
 
 }
+
+float eval(node e){
+    node next=e;
+   
+    int i = 0;
+    while(next->node_left->node_left!=NULL){
+        next=next->node_left;
+        i++;
+    }   
+    float res = next->node_left->label.leaf_num; 
+  
+    if (next->label.node_name='-'){ res=0-res;}
+    next=e;
+    while(i>=0){
+        for(int j=0; j<i; j++){
+            next=next->node_left;
+        }    
+        switch (next->label.node_name)
+        {
+        case '+':
+            if(next->node_right!=NULL){    
+                next=next->node_right;
+                res=res+next->label.leaf_num;
+            } 
+            break;
+        case '-':
+            if(next->node_right!=NULL){    
+                next=next->node_right;
+                res=res-next->label.leaf_num;
+            } 
+            break;
+        case '*':
+            if(next->node_right!=NULL){    
+                next=next->node_right;
+                res=res*next->label.leaf_num;
+            } 
+        case '/':    
+            break;
+            if(next->node_right!=NULL){    
+                next=next->node_right;
+                res=res/next->label.leaf_num;
+            } 
+        default:
+            return res;
+        }
+        i--;
+        next=e;
+    }    
+
+    return res;
+}
+

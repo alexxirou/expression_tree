@@ -1,4 +1,14 @@
 #include "tree.h"
+/*
+       *
+      / \
+     +   5
+    / \ 
+   -    2
+  /
+ 1
+    should give ((-1+2)*5)
+*/
 
 int main(){
     node a=create_leaf(2);
@@ -11,7 +21,7 @@ int main(){
     //bool valid=eval(e);
     //printf("Is valid expression ? %s\n", valid? "True" : "False");
     affiche(e);
-    //float f=eval(e);
-    //printf("%f\n",f);
+    float res=eval(e);
+    printf("%f\n",res);
     return 0;
 }
